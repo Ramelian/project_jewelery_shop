@@ -1,0 +1,148 @@
+// === Variables ===
+$color-price: #A18A68;
+$color-additional: #707070;
+
+// !=== Variables ===
+
+//  === Mixins ===
+@mixin font-DM{
+    font-family: 'DM Sans', sans-serif;
+}
+
+@mixin font-allerta{
+    font-family: 'Allerta Stencil', sans-serif;
+}
+
+@mixin body-large{
+    @include font-DM;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+@mixin body-medium{
+    @include font-DM;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+@mixin body-small{
+    @include font-DM;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+@mixin text-md{
+    @include font-DM;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 26px;
+}
+
+@mixin text-s{
+    @include font-DM;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+@mixin text-xs{
+    @include font-DM;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 27px;
+}
+
+@mixin text-bronze{
+    @include font-DM;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 26px;
+    color: #A18A68;
+}
+
+@mixin main-button{
+    @include text-md;
+    font-weight: 700;
+    border-radius: 6px;
+    background-color: transparent;
+    text-transform: uppercase;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    transition: .3s;
+
+    &:hover{
+        transition: .3s;
+    }
+}
+
+@mixin main-button__mobile{
+    @include body-small;
+    font-weight: 400;
+    border-radius: 6px;
+    background-color: transparent;
+    text-transform: uppercase;
+    padding-block: 7px;
+    transition: .3s;
+
+    &:hover{
+        transition: .3s;
+    }
+}
+
+@mixin black-to-white{
+    color: #FFF;
+    background-color: #000;
+
+    &:hover{
+    color: #000;
+    background-color: #FFF;
+    }
+}
+
+@mixin white-to-black{
+    color: #000;
+    background-color: #FFF;
+
+    &:hover{
+    color: #FFF;
+    background-color: #000;
+    }
+}
+
+@mixin input-text{
+    border: none;
+    border-bottom: 1px solid #D8D8D8;
+    outline: none
+}
+
+//  !=== Mixins ===
+
+*{
+    box-sizing: border-box;
+}
+
+ol, ul {
+    margin: 0;
+    padding: 0;
+    list-style: none outside none;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+  }
+
+
+h1{
+    @include font-DM;
+    font-weight: 500;
+    font-size: 33px;
+    line-height: 43px;
+}
+
+h2{
+    @include font-DM;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 35px;
+}

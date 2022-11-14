@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+}
+
+ol, ul {
+  margin: 0;
+  padding: 0;
+  list-style: none outside none;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+h1 {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 500;
+  font-size: 33px;
+  line-height: 43px;
+}
+
+h2 {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 35px;
+}/*# sourceMappingURL=prepare_settings.css.map */

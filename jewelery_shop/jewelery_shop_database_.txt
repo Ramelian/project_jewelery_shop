@@ -1,0 +1,73 @@
+You have to insert all this information
+to your locale database(PHPmyadmin for instance)
+before starting the project
+
+
+CREATE DATABASE IF NOT EXISTS jewelery_shop;
+
+CREATE TABLE product (id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY, name VARCHAR (255) NOT NULL,
+                              price decimal(5,2) ,
+                              image VARCHAR (255),
+				      weight decimal(5,2),
+				      dimensions VARCHAR (255),
+					colour VARCHAR (255),
+					material VARCHAR (255),
+					description VARCHAR (255),
+					category VARCHAR (255)
+                            );
+
+CREATE TABLE review (id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+			   product_id INT(11),
+			   username VARCHAR (255),
+			   raiting INT(11),
+			   reviewText VARCHAR (255),
+			   email VARCHAR (255)
+			   );
+
+CREATE TABLE customer (id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,			   
+			   first_name VARCHAR (255) NOT NULL,
+               	   last_name VARCHAR (255) NOT NULL,
+                     display_name VARCHAR (255) NOT NULL,
+			   email VARCHAR (255) NOT NULL,
+			   password VARCHAR (255) NOT NULL
+			   );
+
+CREATE TABLE orders (id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,			   
+			   first_name VARCHAR (255) NOT NULL,
+               last_name VARCHAR (255) NOT NULL,
+               company_name VARCHAR (255),
+               country VARCHAR (255) NOT NULL,
+			   street VARCHAR (255) NOT NULL,
+               postcode VARCHAR (255) NOT NULL,
+               city VARCHAR (255) NOT NULL,
+			   phone VARCHAR (255) NOT NULL,
+			   email VARCHAR (255) NOT NULL,
+			   order_notes VARCHAR (255), 
+			   payment VARCHAR (255) NOT NULL,
+			   date_of_order DATE,
+			   status varchar(255)
+			   );
+
+CREATE TABLE product_order( 
+				   product_id INT(11) NOT NULL,
+				   order_id INT(11) NOT NULL,
+				   amount INT(11) NOT NULL,
+            		   PRIMARY KEY (product_id, order_id)
+				  );
+
+CREATE TABLE advertisement(
+				   email VARCHAR(255) NOT NULL PRIMARY KEY
+				  ); 
+
+INSERT INTO product (name, price, image, weight, dimensions, material, colour, description, category) 
+VALUES ("Lira Earrings", 20.00, "../assets_images/Lira_earrings.png", 0.3, "15 x 10 x 5", "gold, silver", "Black, brown, white", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", "earrings"),
+
+("Hal Earrings", 25.00, "../assets_images/Hal_Earrings.png", 0.4, "10 x 10 x 5", "gold", "Brown, white", "LCras maximus laoreet tellus, in viverra ligula rhoncus at. Donec facilisis lectus dictum erat iaculis, luctus porta metus venenatis. Suspendisse arcu orci, molestie quis mi sed, bibendum fringilla ligula. Integer volutpat tempus neque, sed efficitur eros condimentum eu. Vestibulum vitae porttitor magna.", "earrings"),
+
+("Kaede Hair Pin Set Of 3 ", 30.00, "../assets_images/Kaede_Hair_Pin_Set.png", 0.8, "20 x 10 x 5", "gold, silver", "Black, brown, white", "Curabitur sagittis viverra ex et iaculis. Fusce quis rhoncus lorem, ac condimentum enim. Etiam convallis, dolor id varius volutpat, nunc tellus euismod nisi, ut facilisis sem ex sit amet leo. Phasellus odio orci, sollicitudin in purus quis, molestie iaculis nisl. Mauris aliquet sapien enim, eget dapibus ligula egestas finibus.", "set"),
+
+("Hair Pin Set of 3", 30.00, "../assets_images/Hair_pin_set.png", 0.9, "20 x 15 x 5", "silver, gold", "Black, brown", "Aliquam erat volutpat. In in egestas nunc. In laoreet, arcu et scelerisque ultrices, mauris magna malesuada mi, eu cursus mauris risus nec nisl. Nullam quis nisl sit amet mi tincidunt cursus. Donec ante orci, faucibus non velit at, rutrum porta mi.", "set"),
+
+("Plaine Necklace", 19.00, "../assets_images/Plaine_Necklace.png", 0.35, "10 x 7 x 5", "gold", "Brown, white", "Praesent magna odio, maximus sed odio a, consectetur hendrerit metus. Fusce aliquam rutrum ipsum non vestibulum. Maecenas fringilla, nunc id rhoncus porta, est ante scelerisque orci, nec vulputate ligula nisi a magna. Nunc pellentesque sit amet ante nec laoreet. Integer nisi purus, laoreet luctus maximus sed, vulputate et dolor.", "necklace"),
+
+("Yuki Hair Pin Set of 3", 29.00, "../assets_images/Yuki_Hair_Pin_Set.png", 0.95, "20 x 15 x 5", "gold, silver", "Black, brown, white", "Curabitur eget ultrices felis. Quisque non auctor lacus, a eleifend massa. Donec rutrum est purus, ac accumsan risus condimentum et. Integer nec massa ipsum. Nullam nec fringilla risus, sit amet luctus lacus. Nulla facilisi. In aliquam dui vitae orci convallis mollis. ", "set");
